@@ -5,15 +5,15 @@ import axiosInstance from "../services/axiosInstance";
 
 export default function submitResearch() {
   const [title, setTitle] = useState("");
-  const [researcher_name, setUserName] = useState("");
+  const [conducter_name, setConducterName] = useState("");
   const [mobile, setMobile] = useState("");
   const [file, setFile] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newResearch = {
+    const newWorkshop = {
       title,
-      researcher_name,
+      conducter_name,
       mobile,
     };
     if (file) {
@@ -21,7 +21,7 @@ export default function submitResearch() {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      newResearch.document = filename;
+      newWorkshop.document = filename;
       try {
         await axiosInstance.post("/upload", data);
       } catch (err) {
@@ -30,7 +30,7 @@ export default function submitResearch() {
     }
 
     try {
-      const res = await axiosInstance.post("/research", newResearch);
+      const res = await axiosInstance.post("/workshop", newWorkshop);
       alert("form has been submitted successfully");
       console.log(res.data);
     } catch (err) {
@@ -48,7 +48,7 @@ export default function submitResearch() {
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
                     <label htmlFor="title" className="form-label">
-                      Research Title
+                      Workshop Title
                     </label>
                     <input
                       type="text"
@@ -60,13 +60,13 @@ export default function submitResearch() {
                   </div>
                   <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">
-                      Researcher Name
+                      Workshop Conducter Name
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       onChange={(e) => {
-                        setUserName(e.target.value);
+                        setConducterName(e.target.value);
                       }}
                     />
                   </div>
@@ -85,10 +85,11 @@ export default function submitResearch() {
                   </div>
                   <div className="mb-3">
                     <label for="exampleInputPassword1" className="form-label">
-                      Research Document
+                      Workshop Document
                     </label>
                     <input
                       type="file"
+                      accept=".ppt"
                       className="form-control"
                       onChange={(e) => {
                         setFile(e.target.files[0]);
