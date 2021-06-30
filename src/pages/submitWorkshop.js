@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import axiosInstance from "../services/axiosInstance";
 import { Context } from "../../src/context/context";
+import NavBar from "../components/navBar";
 
 export default function submitResearch() {
   const [title, setTitle] = useState("");
@@ -28,7 +29,7 @@ export default function submitResearch() {
     };
     if (file) {
       const data = new FormData();
-      const filename = Date.now() + file.name;
+      const filename = file.name;
       data.append("name", filename);
       data.append("file", file);
       newWorkshop.document = filename;
@@ -49,6 +50,7 @@ export default function submitResearch() {
   };
   return (
     <div>
+      <NavBar />
       <img
         style={{ height: "400px", width: "100%" }}
         src="http://www.pngmagic.com/product_images/purple%20wallpaper%201920x1080.jpg"

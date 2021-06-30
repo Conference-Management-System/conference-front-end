@@ -10,8 +10,6 @@ import Research from "./src/pages/research";
 import Workshop from "./src/pages/workshop";
 import { useContext } from "react";
 import { Context } from "./src/context/context";
-import NavBar from "./src/components/navBar";
-import ReviewNavBar from "./src/components/reviewer/navbar";
 import ResearchApproval from "./src/components/reviewer/researchApproval";
 import ResearchReview from "./src/components/reviewer/researchReview";
 import WorkshopReview from "./src/components/reviewer/workshopReview";
@@ -23,8 +21,6 @@ function App() {
   return (
     <div>
       <Router>
-        <ReviewNavBar />
-
         <section>
           <Switch>
             <Route path="/" component={Home} exact />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import NavBar from "../components/navBar";
 
 import {
   Card,
@@ -30,6 +31,7 @@ export default function workshop() {
   }, []);
   return (
     <div>
+      <NavBar />
       <img
         style={{ height: "400px", width: "100%" }}
         src="https://papers.co/wallpaper/papers.co-vy67-circle-blue-purple-simple-pattern-background-25-wallpaper.jpg"

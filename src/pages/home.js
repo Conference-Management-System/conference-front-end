@@ -1,14 +1,15 @@
 import React from "react";
-import Carousal from "../components/carousal";
 import About from "../components/about";
 import Speaker from "../components/speakers";
-import createConferenceDetails from '../components/editer/createConferenceDetails';
-import Allconference from '../components/editer/conferenceDetails';
+import createConferenceDetails from "../components/editer/createConferenceDetails";
+import Allconference from "../components/editer/conferenceDetails";
 import { Grid, Container, Card, CardContent } from "@material-ui/core";
+import NavBar from "../components/navBar";
 
 export default function home() {
   return (
     <div>
+      <NavBar />
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12}>
           <img
@@ -25,7 +26,7 @@ export default function home() {
         >
           <About />
         </Grid>
-         
+
         <Grid
           style={{
             textAlign: "center",
