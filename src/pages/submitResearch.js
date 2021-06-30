@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Grid, Container, Card, CardContent } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import axiosInstance from "../services/axiosInstance";
+import { Context } from "../../src/context/context";
 
 export default function submitResearch() {
   const [title, setTitle] = useState("");
-  const [researcher_name, setUserName] = useState("");
+  const { user } = useContext(Context);
   const [mobile, setMobile] = useState("");
   const [file, setFile] = useState(null);
 
@@ -13,7 +14,7 @@ export default function submitResearch() {
     e.preventDefault();
     const newResearch = {
       title,
-      researcher_name,
+      username: user.username,
       mobile,
     };
     if (file) {
@@ -55,18 +56,6 @@ export default function submitResearch() {
                       className="form-control"
                       onChange={(e) => {
                         setTitle(e.target.value);
-                      }}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">
-                      Researcher Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      onChange={(e) => {
-                        setUserName(e.target.value);
                       }}
                     />
                   </div>

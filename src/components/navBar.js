@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function navBar() {
   return (
@@ -63,9 +64,11 @@ export default function navBar() {
                 placeholder="Search"
                 aria-label="Search"
               /> */}
-              <button className="btn btn-outline-primary" type="submit">
-                Login
-              </button>
+              <Link to="/login">
+                <button className="btn btn-outline-primary" type="submit">
+                  Logout
+                </button>
+              </Link>
             </form>
           </div>
         </div>
