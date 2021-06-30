@@ -11,13 +11,19 @@ import Workshop from "./src/pages/workshop";
 import { useContext } from "react";
 import { Context } from "./src/context/context";
 import NavBar from "./src/components/navBar";
+import ReviewNavBar from "./src/components/reviewer/navbar";
+import ResearchApproval from "./src/components/reviewer/researchApproval";
+import ResearchReview from "./src/components/reviewer/researchReview";
+import WorkshopReview from "./src/components/reviewer/workshopReview";
+import ReviewerDashboard from "./src/components/reviewer/reviewerDashboard";
+import WorkshopApproval from "./src/components/reviewer/workshopApproval";
 
 function App() {
   const { user } = useContext(Context);
   return (
     <div>
       <Router>
-        <NavBar />
+        <ReviewNavBar />
 
         <section>
           <Switch>
@@ -30,6 +36,11 @@ function App() {
             </Route> */}
             <Route path="/workshop" component={Workshop} />
             <Route path="/research" component={Research} />
+            <Route path="/research-paper" component={ResearchApproval} />
+            <Route path="/research-review/:id" component={ResearchReview} />
+            <Route path="/workshop-review/:id" component={WorkshopReview} />
+            <Route path="/workshop-list" component={WorkshopApproval} />
+            <Route path="/reviewer" component={ReviewerDashboard} exact />
 
             <Route path="/login" component={Login} />
           </Switch>
