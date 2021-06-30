@@ -15,6 +15,9 @@ import ResearchReview from "./src/components/reviewer/researchReview";
 import WorkshopReview from "./src/components/reviewer/workshopReview";
 import ReviewerDashboard from "./src/components/reviewer/reviewerDashboard";
 import WorkshopApproval from "./src/components/reviewer/workshopApproval";
+import createConferenceDetails from "./src/components/editer/createConferenceDetails";
+import Allconference from "./src/components/editer/conferenceDetails";
+import editConference from "./src/components/editer/ConferenceDetailsEdit";
 
 function App() {
   const { user } = useContext(Context);
@@ -37,6 +40,12 @@ function App() {
             <Route path="/workshop-review/:id" component={WorkshopReview} />
             <Route path="/workshop-list" component={WorkshopApproval} />
             <Route path="/reviewer" component={ReviewerDashboard} exact />
+            <Route
+              path="/create-conference"
+              component={createConferenceDetails}
+            />
+            <Route path="/Allconference" component={Allconference} />
+            <Route path="/editConference/:id" component={editConference} />
 
             <Route path="/login" component={Login} />
           </Switch>
