@@ -57,14 +57,14 @@ export default function navBar() {
               </li>
             </ul>
             <form className="d-flex">
-              <input
+              {/* <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-              />
+              /> */}
               <button className="btn btn-outline-primary" type="submit">
-                Search
+                Login
               </button>
             </form>
           </div>

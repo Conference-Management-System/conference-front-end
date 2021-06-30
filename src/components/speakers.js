@@ -5,6 +5,7 @@ import {
   CardContent,
   CardMedia,
   Typography,
+  Avatar,
 } from "@material-ui/core";
 
 export default function speakers() {
@@ -30,6 +31,22 @@ export default function speakers() {
               style={{ height: "140px" }}
               image="https://marketinginsidergroup.com/wp-content/uploads/2020/01/speaker-4610564_1920.jpg"
             />
+            {/* <Grid container justify="center">
+              <Grid item sm={4}>
+                <Avatar
+                  style={{
+                    width: "100px",
+                    height: "100px",
+                    alignItems: "center",
+                    textAlign: "center",
+                    marginTop: "10px",
+                  }}
+                  alt="Remy Sharp"
+                  src="https://marketinginsidergroup.com/wp-content/uploads/2020/01/speaker-4610564_1920.jpg"
+                />
+              </Grid>
+            </Grid> */}
+
             <CardContent>
               <Typography>Prof.John Willaims</Typography>
             </CardContent>
