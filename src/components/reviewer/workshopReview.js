@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
+import NavBar from "./navbar";
 
 export default class WorkshopReview extends React.Component {
   constructor(props) {
@@ -76,56 +77,60 @@ export default class WorkshopReview extends React.Component {
 
   render() {
     return (
-      <div className="container col-sm-4">
-        <br></br>
-        <h1> Workshop details Review </h1>
-        <span>
-          {" "}
-          <i> This page reviews workshop details submissions </i>{" "}
-        </span>
-        <br></br>
-        <br></br>
-        <div className="card text-white bg-dark  mb-3 text-center">
-          <p></p>
-          <b5> Document Name: </b5>
-          <h4> {this.state.document} </h4> <br></br>
-          <a target="_blank" href={this.state.pf + this.state.document}>
-            View Document
-          </a>
+      <div>
+        <NavBar />
+
+        <div className="container col-sm-4">
           <br></br>
-        </div>
-
-        <div className="form-wrapper">
-          <Form onSubmit={this.onSubmit}>
-            <Form.Group controlId="Status">
-              <Form.Label>Select status of submission:</Form.Label>
-              <select
-                class="form-select"
-                aria-label="Default select example"
-                onChange={this.onChangeStatus}
-              >
-                <option selected>Open this status menu</option>
-                <option value="Approved">Approved</option>
-                <option value="Declined">Declined</option>
-              </select>
-            </Form.Group>
+          <h1> Workshop details Review </h1>
+          <span>
+            {" "}
+            <i> This page reviews workshop details submissions </i>{" "}
+          </span>
+          <br></br>
+          <br></br>
+          <div className="card text-white bg-dark  mb-3 text-center">
+            <p></p>
+            <b5> Document Name: </b5>
+            <h4> {this.state.document} </h4> <br></br>
+            <a target="_blank" href={this.state.pf + this.state.document}>
+              View Document
+            </a>
             <br></br>
-            <Button variant="warning" size="m" block="block" type="submit">
-              Update Status
-            </Button>
-          </Form>
-          <p></p>
-          <Button onClick={this.deleteWorkshop} size="m" variant="danger">
-            Delete
-          </Button>
+          </div>
 
-          <p></p>
-          <p></p>
-          <Link to="/workshop">
-            <button type="button" class="btn btn-success">
-              Go back
-            </button>
-          </Link>
+          <div className="form-wrapper">
+            <Form onSubmit={this.onSubmit}>
+              <Form.Group controlId="Status">
+                <Form.Label>Select status of submission:</Form.Label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  onChange={this.onChangeStatus}
+                >
+                  <option selected>Open this status menu</option>
+                  <option value="Approved">Approved</option>
+                  <option value="Declined">Declined</option>
+                </select>
+              </Form.Group>
+              <br></br>
+              <Button variant="warning" size="m" block="block" type="submit">
+                Update Status
+              </Button>
+            </Form>
+            <p></p>
+            <Button onClick={this.deleteWorkshop} size="m" variant="danger">
+              Delete
+            </Button>
+
+            <p></p>
+            <p></p>
+            <Link to="/workshop">
+              <button type="button" class="btn btn-success">
+                Go back
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     );

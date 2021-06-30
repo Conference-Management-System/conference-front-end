@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import { getAllWorkshop } from "../services/getAllWorkshop";
-import navBar from "../components/navBar";
+import NavBar from "../components/navBar";
 
 export default function workshop() {
   const PF = "localhost:8087/files/";
@@ -27,6 +27,7 @@ export default function workshop() {
   }, []);
   return (
     <div>
+      <NavBar />
       <img
         style={{ height: "400px", width: "100%" }}
         src="http://www.pngmagic.com/product_images/purple%20wallpaper%201920x1080.jpg"
