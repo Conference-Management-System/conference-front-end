@@ -165,7 +165,7 @@ export default function submitResearch() {
                     fontSize: "24px",
                   }}
                 >
-                  WORKSHOP PROPOSAL TEMPLATE
+                  Workshop Proposal Template
                 </Typography>
               </Grid>
               <Grid item sm={12}>
