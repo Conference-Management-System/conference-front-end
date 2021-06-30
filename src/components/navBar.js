@@ -5,7 +5,7 @@ export default function navBar() {
     <div style={{ backgroundColor: "blueviolet" }}>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/create-conference">
             Conference
           </a>
           <button
