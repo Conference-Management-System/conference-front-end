@@ -1,4 +1,5 @@
 import React from "react";
+
 import NavBar from "../components/navBar";
 import ConCard from "../components/conCard";
 import Carousal from "../components/carousal";
@@ -6,12 +7,12 @@ import About from "../components/about";
 import Speaker from "../components/speakers";
 import { Grid, Container, Card, CardContent } from "@material-ui/core";
 
+
 export default function home() {
   return (
     <div>
 
       <NavBar />
-
       <Grid container spacing={3}>
 
         <Grid item xs={12} sm={12}>

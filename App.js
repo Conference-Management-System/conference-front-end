@@ -18,6 +18,7 @@ import WorkshopApproval from "./src/components/reviewer/workshopApproval";
 import createConferenceDetails from "./src/components/editer/createConferenceDetails";
 import Allconference from "./src/components/editer/conferenceDetails";
 import editConference from "./src/components/editer/ConferenceDetailsEdit";
+
 function App() {
   const { user } = useContext(Context);
   return (
@@ -45,6 +46,7 @@ function App() {
             />
             <Route path="/Allconference" component={Allconference} />
             <Route path="/editConference/:id" component={editConference} />
+
             <Route path="/login" component={Login} />
           </Switch>
         </section>
@@ -52,4 +54,6 @@ function App() {
     </div>
   );
 }
+
 export default App;
+
