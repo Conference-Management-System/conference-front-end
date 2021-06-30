@@ -48,6 +48,8 @@ class WorkshopApproval extends React.Component {
                         <th>Title</th>
                         <th>Conducter Name</th>
                         <th>Conducter Mobile Number</th>
+                        <th>Duration</th>
+                        <th>Description</th>
                         <th>Created At</th>
                         <th>Document Name</th>
                         <th>Status</th>

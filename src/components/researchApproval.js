@@ -46,7 +46,8 @@ class ResearchApproval extends React.Component {
                     <tr>
                         <th>Title</th>
                         <th>Researcher Name</th>
-                        <th>Researcher Mobile Number</th>
+                        <th>Researcher Mobile Number</th>                        
+                        <th>Position</th>
                         <th>Created At</th>
                         <th>Document Name</th>
                         <th>Status</th>

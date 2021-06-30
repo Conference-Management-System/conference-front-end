@@ -16,7 +16,8 @@ export default class WorkshopReview extends React.Component {
     // State
     this.state = {
       status: '',
-      document: ''
+      document: '',
+      pf: 'localhost:8087/files/'
     }
   }
   
@@ -76,7 +77,12 @@ export default class WorkshopReview extends React.Component {
                 <div className="card text-white bg-dark  mb-3 text-center"><p></p>
                 <b5> Document Name: </b5>
                 <h4> {this.state.document} </h4> <br></br>
-                </div>
+                <a target="_blank" href={this.state.pf + this.state.document}>
+                    View Document
+                  </a>  
+                  <br></br>
+                </div>              
+                 
                 <div className="form-wrapper">
                     <Form onSubmit={this.onSubmit}>
                         <Form.Group controlId="Status">

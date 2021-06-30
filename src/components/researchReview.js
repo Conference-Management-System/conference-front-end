@@ -16,9 +16,10 @@ export default class ResearchReview extends React.Component {
     // State
     this.state = {
       status: '',
-      document: ''
+      document: '',
+      pf: 'localhost:8087/files/'
     }
-  }
+  }  
   
   componentDidMount() {
     axios.get('http://localhost:8087/api/research/' + this.props.match.params.id)
@@ -76,6 +77,10 @@ export default class ResearchReview extends React.Component {
                 <div className="card text-white bg-dark  mb-3 text-center"><p></p>
                 <b5> Document Name: </b5>
                 <h4> {this.state.document} </h4> <br></br>
+                <a target="_blank" href={this.state.pf + this.state.document}>
+                   View Document
+                  </a>
+                  <br></br>
                 </div>
                 <div className="form-wrapper">
                     <Form onSubmit={this.onSubmit}>
@@ -92,10 +97,10 @@ export default class ResearchReview extends React.Component {
                         Update Status
                         </Button>
                     </Form>
-                    <p></p>
+                    <br></br>
                     <Button onClick={this.deleteResearch} size="m" variant="danger">Delete</Button>
                 
-                    <p></p><p></p>
+                    <br></br><br></br>
                     <Link to="/research-paper">
                         <button type="button" class="btn btn-success">
                               Go back
