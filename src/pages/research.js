@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+
 import {
   Card,
   Grid,
   Container,
   CardContent,
   Typography,
+  Chip,
 } from "@material-ui/core";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+
 import { getAllResearch } from "../services/getAllResearch";
 
 export default function workshop() {
@@ -26,25 +30,61 @@ export default function workshop() {
   }, []);
   return (
     <div>
-      <Container>
-        <Grid container justify="center" spacing={2}>
-          <Grid item sm={3}></Grid>
-          <Grid item sm={6}>
-            {research.map((item) => (
-              <Card>
-                <CardContent>
-                  <Typography variant="h5">{item.title}</Typography>
-                  <Typography variant="body1">{item.mobile}</Typography>
-                  <Typography variant="body2">{item.document}</Typography>
-                  <a target="_blank" href={PF + item.document}>
-                    view
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
-          </Grid>
-          <Grid item sm={3}></Grid>
-        </Grid>
+      <img
+        style={{ height: "400px", width: "100%" }}
+        src="https://papers.co/wallpaper/papers.co-vy67-circle-blue-purple-simple-pattern-background-25-wallpaper.jpg"
+        alt="/"
+      />
+      <Container style={{ paddingTop: "30px" }}>
+        <Grid item sm={12}></Grid>
+        {research.map((item) => (
+          <div>
+            <Grid container justify="center" spacing={3}>
+              <Grid item sm={6}>
+                <Card>
+                  <CardContent>
+                    <Grid container>
+                      <Grid item sm={10}>
+                        <Typography variant="body1">{item.title}</Typography>
+                        <Typography variant="body1">{item.mobile}</Typography>
+                        <Typography variant="body1">{item.document}</Typography>
+                        <a target="_blank" href={PF + item.document}>
+                          <VisibilityIcon style={{ color: "#9400b3" }} />
+                        </a>
+                      </Grid>
+                      <Grid item sm={2}>
+                        <Typography variant="body1">
+                          {item.status === "Approved" ? (
+                            <Chip
+                              style={{ backgroundColor: "green" }}
+                              size="small"
+                              label="approved"
+                            />
+                          ) : null}
+
+                          {item.status === "Declined" ? (
+                            <Chip
+                              style={{ backgroundColor: "#cc1100" }}
+                              size="small"
+                              label="declined"
+                            />
+                          ) : null}
+                          {item.status === "pending" ? (
+                            <Chip
+                              style={{ backgroundColor: "#f5d730" }}
+                              size="small"
+                              label="pending"
+                            />
+                          ) : null}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </div>
+        ))}
       </Container>
     </div>
   );

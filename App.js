@@ -10,12 +10,15 @@ import Research from "./src/pages/research";
 import Workshop from "./src/pages/workshop";
 import { useContext } from "react";
 import { Context } from "./src/context/context";
+import NavBar from "./src/components/navBar";
 
 function App() {
   const { user } = useContext(Context);
   return (
     <div>
       <Router>
+        <NavBar />
+
         <section>
           <Switch>
             <Route path="/" component={Home} exact />

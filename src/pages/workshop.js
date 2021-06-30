@@ -5,8 +5,11 @@ import {
   Container,
   CardContent,
   Typography,
+  Chip,
 } from "@material-ui/core";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 import { getAllWorkshop } from "../services/getAllWorkshop";
+import navBar from "../components/navBar";
 
 export default function workshop() {
   const PF = "localhost:8087/files/";
@@ -24,26 +27,61 @@ export default function workshop() {
   }, []);
   return (
     <div>
-      <Container>
-        <Grid container justify="center" spacing={2}>
-          <Grid item sm={3}></Grid>
-          <Grid item sm={6}>
-            {workshop.map((item) => (
-              <Card>
-                <CardContent>
-                  <Typography variant="h5">{item.title}</Typography>
-                  <Typography variant="body1">{item.mobile}</Typography>
-                  <Typography variant="h6">{item.document}</Typography>
-                  <a target="_blank" href={PF + item.document}>
-                    view
-                  </a>
-                  <Typography variant="h6">{item.status}</Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </Grid>
-          <Grid item sm={3}></Grid>
-        </Grid>
+      <img
+        style={{ height: "400px", width: "100%" }}
+        src="http://www.pngmagic.com/product_images/purple%20wallpaper%201920x1080.jpg"
+        alt="/"
+      />
+      <Container style={{ paddingTop: "30px" }}>
+        <Grid item sm={12}></Grid>
+        {workshop.map((item) => (
+          <div>
+            <Grid container justify="center" spacing={3}>
+              <Grid item sm={6}>
+                <Card>
+                  <CardContent>
+                    <Grid container>
+                      <Grid item sm={10}>
+                        <Typography variant="body1">{item.title}</Typography>
+                        <Typography variant="body1">{item.mobile}</Typography>
+                        <Typography variant="body1">{item.document}</Typography>
+                        <a target="_blank" href={PF + item.document}>
+                          <VisibilityIcon style={{ color: "#9400b3" }} />
+                        </a>
+                      </Grid>
+                      <Grid item sm={2}>
+                        <Typography variant="body1">
+                          {item.status === "Approved" ? (
+                            <Chip
+                              style={{ backgroundColor: "green" }}
+                              size="small"
+                              label="approved"
+                            />
+                          ) : null}
+
+                          {item.status === "Declined" ? (
+                            <Chip
+                              style={{ backgroundColor: "#cc1100" }}
+                              size="small"
+                              label="declined"
+                            />
+                          ) : null}
+                          {item.status === "pending" ? (
+                            <Chip
+                              style={{ backgroundColor: "#f5d730" }}
+                              size="small"
+                              label="pending"
+                            />
+                          ) : null}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </div>
+        ))}
       </Container>
     </div>
   );
