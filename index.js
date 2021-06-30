@@ -5,6 +5,7 @@ import Home from "./src/pages/home";
 import createConferenceDetails from './src/components/editer/createConferenceDetails';
 import Allconference from './src/components/editer/conferenceDetails';
 import editConference from './src/components/editer/ConferenceDetailsEdit';
+import admonApprove from './src/components/editer/adminApprove';
 
 function App(props) {
   return (
@@ -16,6 +17,8 @@ function App(props) {
             <Route path = "/create-conference" component = {createConferenceDetails}/>
             <Route path = "/Allconference" component = {Allconference}/>
             <Route path = "/editConference/:id" component = {editConference}/>
+            <Route path = "/admonApprove" component = {admonApprove}/>
+
           </Switch>
         </section>
       </Router>
