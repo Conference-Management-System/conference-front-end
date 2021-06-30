@@ -2,6 +2,8 @@ import React from "react";
 import Carousal from "../components/carousal";
 import About from "../components/about";
 import Speaker from "../components/speakers";
+import createConferenceDetails from '../components/editer/createConferenceDetails';
+import Allconference from '../components/editer/conferenceDetails';
 import { Grid, Container, Card, CardContent } from "@material-ui/core";
 
 export default function home() {
@@ -23,6 +25,7 @@ export default function home() {
         >
           <About />
         </Grid>
+         
         <Grid
           style={{
             textAlign: "center",
